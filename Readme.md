@@ -1,10 +1,10 @@
-# FUNDWISE — AI-Powered Multi-Agent Grant Review System
+# GrantGuard — AI-Powered Multi-Agent Grant Review System
 
 ## Overview
 
-**FUNDWISE** is a production-oriented AI system that automates the first-pass review of NGO grant applications using a **multi-agent architecture** built with **LangGraph**.
+**GrantGuard** is a production-oriented AI system that automates the first-pass review of NGO grant applications using a **multi-agent architecture** built with **LangGraph**.
 
-Instead of functioning as a chatbot, FUNDWISE simulates the workflow of a human grant review committee by breaking the evaluation process into specialized agents. Each agent has a single responsibility and communicates through structured outputs, making the system modular, explainable, and easy to extend.
+Instead of functioning as a chatbot, GrantGuard simulates the workflow of a human grant review committee by breaking the evaluation process into specialized agents. Each agent has a single responsibility and communicates through structured outputs, making the system modular, explainable, and easy to extend.
 
 The goal is **not** to replace human reviewers, but to provide an intelligent, transparent, and secure recommendation before final approval.
 
@@ -40,7 +40,7 @@ Grant applications typically require reviewers to manually verify:
 
 Manual review is time-consuming, inconsistent, and difficult to scale.
 
-FUNDWISE automates this first-pass review while maintaining transparency and allowing human reviewers to make the final decision.
+GrantGuard automates this first-pass review while maintaining transparency and allowing human reviewers to make the final decision.
 
 ---
 
@@ -284,7 +284,7 @@ The Judge is the only component responsible for making the final recommendation.
 # Folder Structure
 
 ```text
-FUNDWISE/
+GrantGuard/
 │
 ├── agents/
 │   ├── planner.py
@@ -360,7 +360,7 @@ Each tool focuses on producing evidence rather than making approval decisions.
 
 **Status:** In Progress
 
-The Policy RAG module will allow FUNDWISE to evaluate applications against funding policies.
+The Policy RAG module will allow GrantGuard to evaluate applications against funding policies.
 
 Workflow:
 
@@ -397,7 +397,7 @@ Benefits:
 
 # Security Features
 
-FUNDWISE includes a hybrid security pipeline designed to protect against prompt injection attacks.
+GrantGuard includes a hybrid security pipeline designed to protect against prompt injection attacks.
 
 Rule-Based Detection:
 
@@ -546,7 +546,7 @@ Clone the repository:
 
 ```bash
 git clone <repository-url>
-cd FUNDWISE
+cd GrantGuard
 ```
 
 Create a virtual environment:
@@ -585,6 +585,6 @@ python app.py
 
 # Vision
 
-FUNDWISE aims to demonstrate how modern AI engineering techniques—including multi-agent orchestration, structured outputs, retrieval-augmented generation, security analysis, and explainable decision-making—can be combined to build a reliable, production-ready grant review platform.
+GrantGuard aims to demonstrate how modern AI engineering techniques—including multi-agent orchestration, structured outputs, retrieval-augmented generation, security analysis, and explainable decision-making—can be combined to build a reliable, production-ready grant review platform.
 
 The long-term objective is to create an extensible system that assists human reviewers by automating repetitive verification tasks while preserving transparency, accountability, and security throughout the review process.
