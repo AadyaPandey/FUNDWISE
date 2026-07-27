@@ -5,12 +5,12 @@ from graph.state import GrantState
 from graph.workflow import graph
 
 st.set_page_config(
-    page_title="FundWise",
+    page_title="GrantGuard",
     page_icon="🛡️",
     layout="wide",
 )
 
-st.title("🛡️ FundWise")
+st.title("🛡️ GrantGuard")
 st.caption("Multi-Agent AI Grant Review System")
 
 # -----------------------------------------------------
@@ -351,7 +351,7 @@ if submitted:
         "final_decision": "",
     }
 
-    with st.spinner("Running FundWise..."):
+    with st.spinner("Running GrantGuard..."):
         result = graph.invoke(state)
 
     st.success("Evaluation Complete")
@@ -379,7 +379,7 @@ if submitted:
 #         "final_decision": "",
 #     }
 
-#     with st.spinner("Running FundWise..."):
+#     with st.spinner("Running GrantGuard..."):
 
 #         result = graph.invoke(state)
 
