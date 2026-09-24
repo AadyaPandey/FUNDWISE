@@ -28,18 +28,37 @@ export default function LoginForm() {
     e.preventDefault();
 
     setLoading(true);
+    const loadingToast = toast.loading("Waking up GrantGuard AI agent...");
 
     try {
       // -----------------------------
       // Login
       // -----------------------------
+      console.log("1. Pinging backend...");
 
-      const response = await axios.post("http://localhost:8000/login", {
-        // Backend expects "username"
-        // We use the email as the username
-        username: form.email,
-        password: form.password,
+      const pingResponse = await fetch("https://fundwise-3gup.onrender.com");
+
+      console.log("Ping Status:", pingResponse.status);
+
+      if (!pingResponse.ok) {
+        throw new Error("Backend is not available");
+      }
+
+      toast.success("Agent is online. Starting evaluation...", {
+        id: loadingToast,
       });
+
+      console.log("2. Sending login request...");
+
+      const response = await axios.post(
+        "https://fundwise-3gup.onrender.com/login",
+        {
+          // Backend expects "username"
+          // We use the email as the username
+          username: form.email,
+          password: form.password,
+        },
+      );
 
       console.log("Login response:", response.data);
 
