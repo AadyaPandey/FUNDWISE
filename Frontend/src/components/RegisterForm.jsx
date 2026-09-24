@@ -39,6 +39,7 @@ export default function RegisterForm() {
     }
 
     setLoading(true);
+    const loadingToast = toast.loading("Waking up GrantGuard AI agent...");
 
     try {
       // -----------------------------
@@ -77,8 +78,24 @@ export default function RegisterForm() {
         username: form.email,
       });
 
+      console.log("1. Pinging backend...");
+
+      const pingResponse = await fetch("https://fundwise-3gup.onrender.com");
+
+      console.log("Ping Status:", pingResponse.status);
+
+      if (!pingResponse.ok) {
+        throw new Error("Backend is not available");
+      }
+
+      toast.success("Agent is online. Starting evaluation...", {
+        id: loadingToast,
+      });
+
+      console.log("2. Sending login request...");
+
       const response = await axios.post(
-        "http://localhost:8000/register",
+        "https://fundwise-3gup.onrender.com/register",
         payload,
       );
 
